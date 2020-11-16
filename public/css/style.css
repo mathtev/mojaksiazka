@@ -49,6 +49,7 @@
     visibility: visible;
 }
 
+
 body {
     margin: 0;
     background: transparent linear-gradient(180deg, #F7EFB7 0%, #E3CD28 0%, #FFF7B6FA 100%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
@@ -379,7 +380,7 @@ button {
 
 .user-stats ul {
     list-style-type: none;
-    padding: 1em;
+    padding: 2em;
     width: 15vw;
 }
 
