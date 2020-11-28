@@ -52,7 +52,7 @@
 
 body {
     margin: 0;
-    background: transparent linear-gradient(180deg, #F7EFB7 0%, #E3CD28 0%, #FFF7B6FA 100%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #F7EFB7 0%, #e3cd28 0%, #FFF7B6FA 100%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
     max-width: 1720px;
 }
 
@@ -445,3 +445,38 @@ button {
     margin: 0 10px;
 }
 
+/*-------------ADD-BOOK-----------*/
+
+.add-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1em 2em;
+    height: 100%;
+}
+
+.add-book>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-book button {
+    background: transparent linear-gradient(180deg, #E3CD2A 0%, #FFF7B6F9 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000042;
+    border-radius: 12px;
+    width: 30%;
+    border: none;
+    margin: 1em;
+    padding: 0.5em;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.add-book input, textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+}

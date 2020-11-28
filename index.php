@@ -11,6 +11,7 @@ Router::get('books', 'DefaultController');
 Router::get('lists', 'DefaultController');
 Router::get('user', 'DefaultController');
 Router::post('login', 'SecurityController');
+Router::post('addBook', 'BookController');
 
 Router::run($path);
 
