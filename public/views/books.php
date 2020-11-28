@@ -23,11 +23,11 @@
                 </li>
                 <li>
                     <i class="fas fa-pen-alt"></i>
-                    <a href="./authors.html" class="navbutton">authors</a>
+                    <a href="authors" class="navbutton">authors</a>
                 </li>
                 <li>
                     <i class="fas fa-scroll"></i>
-                    <a href="./lists.html" class="navbutton">lists</a>
+                    <a href="lists" class="navbutton">lists</a>
                 </li>
                 <li>
                     <i class="fas fa-archive"></i>
@@ -47,11 +47,11 @@
                     </form>
                 </div>
                 <div class="user-details">
-                    <a href="user.html">
+                    <a href="user">
                         <img src="public/img/uploads/user.png" alt="user img">
                     </a>
                     <a class="username" href="#">Username</a>
-                    <a class="logout" href="login.html">Logout</a>
+                    <a class="logout" href="login">Logout</a>
                 </div>
             </header>
             <header class="small-screen-header">
@@ -63,7 +63,7 @@
                         <img src="public/img/logo.svg">
                     </div>
                     <div class="user-details">
-                        <a href="user.html">
+                        <a href="user">
                             <img src="public/img/uploads/user.png" alt="user img">
                         </a>
                     </div>

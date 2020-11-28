@@ -9,7 +9,8 @@ Router::get('', 'DefaultController');
 Router::get('authors', 'DefaultController');
 Router::get('books', 'DefaultController');
 Router::get('lists', 'DefaultController');
-Router::get('login', 'DefaultController');
 Router::get('user', 'DefaultController');
+Router::post('login', 'SecurityController');
 
 Router::run($path);
+

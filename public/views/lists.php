@@ -2,11 +2,11 @@
 <head>
     <script data-require="jquery@*" data-semver="2.1.4" src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="https://kit.fontawesome.com/36713509a2.js" crossorigin="anonymous"></script>
-
+    
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/queries/style.css">
 
-    <title>USER</title>
+    <title>LISTS</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 
     <script src="public/scripts/script.js"></script>
@@ -19,15 +19,15 @@
             <ul>
                 <li>
                     <i class="fas fa-book"></i>
-                    <a href="books.html" class="navbutton">books</a>
+                    <a href="books" class="navbutton">books</a>
                 </li>
                 <li>
                     <i class="fas fa-pen-alt"></i>
-                    <a href="authors.html" class="navbutton">authors</a>
+                    <a href="authors" class="navbutton">authors</a>
                 </li>
                 <li>
                     <i class="fas fa-scroll"></i>
-                    <a href="lists.html" class="navbutton">lists</a>
+                    <a href="#" class="navbutton">lists</a>
                 </li>
                 <li>
                     <i class="fas fa-archive"></i>
@@ -47,11 +47,11 @@
                     </form>
                 </div>
                 <div class="user-details">
-                    <a href="#">
+                    <a href="user">
                         <img src="public/img/uploads/user.png" alt="user img">
                     </a>
                     <a class="username" href="#">Username</a>
-                    <a class="logout" href="login.html">Logout</a>
+                    <a class="logout" href="login">Logout</a>
                 </div>
             </header>
             <header class="small-screen-header">
@@ -63,7 +63,7 @@
                         <img src="public/img/logo.svg">
                     </div>
                     <div class="user-details">
-                        <a href="#">
+                        <a href="user">
                             <img src="public/img/uploads/user.png" alt="user img">
                         </a>
                     </div>
@@ -80,28 +80,39 @@
                 </div>
                 
             </header>
-            <section class="user-section">
-                <h2>Username</h2>
-                <hr>
-                <div>
-                    <img src="public/img/uploads/user.png">
-                    <div>
-                        <div class="user-stats">
-                            <ul>
-                                <li>books on shelf: 10</li>
-                                <li>followers:  2</li>
-                                <li>following:  3</li>
-                            </ul>
-                        </div>
-                        <div class="about-me">
-                            <div>
-                                <h3>About me</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quia delectus explicabo iusto quisquam itaque magni ut. Accusantium, fugit. Velit magnam rem voluptatum a quia assumenda repellat ducimus corporis explicabo.</p>
-                            </div>
-                        </div>
+            <section class="lists-section">
+                <div class="book-lists">
+                    <a href="#"><h1 class="list-title">1st list title</h1></a>
+                    <div class="book-list">
+                        <a class="book-cover" href="#">
+                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
+                        </a>
+                        <a class="book-cover" href="#">
+                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
+                        </a>
+                        <a class="book-cover" href="#">
+                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
+                        </a>
+                        <a class="book-cover" href="#">
+                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
+                        </a>
+                    </div>
+                    <a href="#"><h1 class="list-title">2nd list title</h1></a>
+                    <div class="book-list">
+                        <a class="book-cover" href="#">
+                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
+                        </a>
+                        <a class="book-cover" href="#">
+                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
+                        </a>
+                        <a class="book-cover" href="#">
+                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
+                        </a>
+                        <a class="book-cover" href="#">
+                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
+                        </a>
                     </div>
                 </div>
-                <hr>
             </section>
         </main>
     </div>
