@@ -283,7 +283,6 @@ button {
 }
 
 .books>div {
-    width: 90%;
     display: flex;
     flex-direction: column;
 }
@@ -294,7 +293,14 @@ button {
     color: black;
 }
 
+.book-cover {
+    width: 225px;
+    height: 300px;
+}
+
 .book-cover img {
+    width: 100%;
+    height: 100%;
     box-shadow: 3px 6px 6px #00000029;
     border-radius: 17px;
     margin: 0;

@@ -91,94 +91,10 @@
                 <div class="books">
                     <div id="book-1">
                         <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                            <h2>Book title which is very very very very long</h2>
+                            <h2><?= $book->getTitle() ?></h2>
                         </a>
                         <a class="book-cover" href="#">
-                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
-                        </a>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 123</i>
-                            <i class="fas fa-star"> 10/10</i>
-                        </div>
-                    </div>
-                    <div id="book-2">
-                        <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                            <h2>WWWery LONGGGG TITLEELKDXSC</h2>
-                        </a>
-                        <a class="book-cover" href="#">
-                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
-                        </a>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 123</i>
-                            <i class="fas fa-star"> 10/10</i>
-                        </div>
-                    </div>
-                    <div id="book-3">
-                        <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                            <h2>Book title</h2>
-                        </a>
-                        <a class="book-cover" href="#">
-                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
-                        </a>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 123</i>
-                            <i class="fas fa-star"> 10/10</i>
-                        </div>
-                    </div>
-                    <div id="book-4">
-                        <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                            <h2>Book title</h2>
-                        </a>
-                        <a class="book-cover" href="#">
-                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
-                        </a>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 123</i>
-                            <i class="fas fa-star"> 10/10</i>
-                        </div>
-                    </div>
-                    <div id="book-5">
-                        <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                            <h2>Book title</h2>
-                        </a>
-                        <a class="book-cover" href="#">
-                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
-                        </a>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 123</i>
-                            <i class="fas fa-star"> 10/10</i>
-                        </div>
-                    </div>
-                    <div id="book-6">
-                        <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                            <h2>Book title</h2>
-                        </a>
-                        <a class="book-cover" href="#">
-                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
-                        </a>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 123</i>
-                            <i class="fas fa-star"> 10/10</i>
-                        </div>
-                    </div>
-                    <div id="book-7">
-                        <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                            <h2>Book titlee</h2>
-                        </a>
-                        <a class="book-cover" href="#">
-                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
-                        </a>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 123</i>
-                            <i class="fas fa-star"> 10/10</i>
-                        </div>
-                    </div>
-                    <div id="book-8">
-                        <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                            <h2>Book title</h2>
-                        </a>
-                        <a class="book-cover" href="#">
-                            <img src="public/img/uploads/book-cover.jpg" alt="book img">
+                            <img src="public/img/uploads/books/<?= $book->getImage() ?>" alt="book img">
                         </a>
                         <div class="social-section">
                             <i class="fas fa-heart"> 123</i>
