@@ -14,11 +14,6 @@ class DefaultController extends AppController {
         $this->render('authors');
     }
 
-    public function books()
-    {
-        $this->render('books');
-    }
-
     public function lists()
     {
         $this->render('lists');

@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 
     <script src="public/scripts/script.js"></script>
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
 </head>
 
 <body>
@@ -42,9 +43,7 @@
         <main>
             <header class="big-screen-header">
                 <div class="search-bar">
-                    <form>
-                        <input placeholder="Search for books">
-                    </form>
+                    <input placeholder="Search for books">
                 </div>
                 <div class="user-details">
                     <a href="user">
@@ -89,21 +88,38 @@
                 </div>
                 <hr>
                 <div class="books">
-                    <div id="book-1">
-                        <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                            <h2><?= $book->getTitle() ?></h2>
-                        </a>
-                        <a class="book-cover" href="#">
-                            <img src="public/img/uploads/books/<?= $book->getImage() ?>" alt="book img">
-                        </a>
-                        <div class="social-section">
-                            <i class="fas fa-heart"> 123</i>
-                            <i class="fas fa-star"> 10/10</i>
+                    <?php foreach($books as $book): ?>
+                        <div id="book-1">
+                            <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
+                                <h2><?= $book->getTitle() ?></h2>
+                            </a>
+                            <a class="book-cover" href="#">
+                                <img src="public/img/uploads/books/<?= $book->getImage() ?>" alt="book img">
+                            </a>
+                            <div class="social-section">
+                                <i class="fas fa-heart"><?= $book->getHearts() ?></i>
+                                <i class="fas fa-star"> 9/10</i>
+                            </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </section>
         </main>
     </div>
 
 </body>
+
+<template id="book-template">
+    <div id="">
+        <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
+            <h2>title</h2>
+        </a>
+        <a class="book-cover" href="#">
+            <img src="" alt="book img">
+        </a>
+        <div class="social-section">
+            <i class="fas fa-heart"> 0</i>
+            <i class="fas fa-star"> 9/10</i>
+        </div>
+    </div>
+</template>

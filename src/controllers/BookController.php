@@ -2,6 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Book.php';
+require_once __DIR__.'/../repository/BookRepository.php';
 
 class BookController extends AppController {
 
@@ -10,6 +11,19 @@ class BookController extends AppController {
     const UPLOAD_DIRECTORY = '/../public/img/uploads/books/';
 
     private $messages = [];
+    private $bookRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->bookRepository = new BookRepository();
+    }
+
+    public function books()
+    {
+        $books = $this->bookRepository->getBooks();
+        $this->render('books', ['books' => $books]);
+    }
 
     public function addBook()
     {
@@ -19,12 +33,27 @@ class BookController extends AppController {
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
-            // TODO create new book object and save it in database
             $book = new Book($_POST['title'], $_POST['description'], $_FILES['file']['name']);
+            $this->bookRepository->addBook($book);
 
             return $this->render('books', ['messages' => $this->messages, 'book' => $book]);
         }
         return $this->render('add-book', ['messages' => $this->messages]);
+    }
+
+    public function search()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->bookRepository->getBookByTitle($decoded['search']));
+        }
     }
 
     private function validate(array $file): bool
