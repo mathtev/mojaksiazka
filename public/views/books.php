@@ -11,6 +11,7 @@
 
     <script src="public/scripts/script.js"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
+    <script type="text/javascript" src="./public/js/statistics.js" defer></script>
 </head>
 
 <body>
@@ -89,15 +90,15 @@
                 <hr>
                 <div class="books">
                     <?php foreach($books as $book): ?>
-                        <div id="book-1">
+                        <div id="<?= $book->getId() ?>">
                             <a class="book-title snip" data-toggle="tooltip" title="book title" href="#">
-                                <h2><?= $book->getTitle() ?></h2>
+                                <h2><?= $book->getTitle(); ?></h2>
                             </a>
                             <a class="book-cover" href="#">
-                                <img src="public/img/uploads/books/<?= $book->getImage() ?>" alt="book img">
+                                <img src="public/img/uploads/books/<?= $book->getImage(); ?>" alt="book img">
                             </a>
                             <div class="social-section">
-                                <i class="fas fa-heart"><?= $book->getHearts() ?></i>
+                                <i class="fas fa-heart"> <?= $book->getHearts(); ?></i>
                                 <i class="fas fa-star"> 9/10</i>
                             </div>
                         </div>

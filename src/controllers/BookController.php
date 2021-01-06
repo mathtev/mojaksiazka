@@ -56,6 +56,11 @@ class BookController extends AppController {
         }
     }
 
+    public function heart(int $id) {
+        $this->bookRepository->giveHeart($id);
+        http_response_code(200);
+    }
+
     private function validate(array $file): bool
     {
         if ($file['size'] > self::MAX_FILE_SIZE) {
