@@ -1,11 +1,12 @@
 <?php
+session_start();
+
 
 require_once 'Repository.php';
 require_once __DIR__.'/../models/Book.php';
 
 class BookRepository extends Repository
 {
-
     public function getBook(int $id): ?Book
     {
         $stmt = $this->database->connect()->prepare('
@@ -79,13 +80,41 @@ class BookRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function giveHeart(int $id) {
-        $stmt = $this->database->connect()->prepare('
+    public function giveHeart(int $id)
+    {
+        $isPressed = 0;
+        $userId = $_SESSION['userId'];
+
+        $conn  = $this->database->connect();
+        $conn->beginTransaction();
+        $temp = $conn->query("SELECT * FROM users_books WHERE id_book = '$id' AND id_user = '$userId'");
+
+        if ($temp->rowCount()==0) {
+            $isPressed = 1;
+            $stmt = $conn->prepare('
             UPDATE books SET "hearts" = "hearts" + 1 WHERE id = :id
          ');
+            $stmt2 = $conn->prepare('
+            INSERT INTO users_books (id_user, id_book)
+            VALUES (?, ?)
+        ');
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            $stmt2->execute([
+                $userId,
+                $id
+            ]);
+        } else {
+            $stmt = $conn->prepare('
+            UPDATE books SET "hearts" = "hearts" - 1 WHERE id = :id
+         ');
+            $conn->query("DELETE FROM users_books WHERE id_book = '$id' AND id_user = '$userId'");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        }
+        $conn->commit();
 
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
+        return $isPressed;
     }
 }
 

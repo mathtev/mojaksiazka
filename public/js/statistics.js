@@ -2,15 +2,28 @@ const heartButtons = document.querySelectorAll(".fa-heart");
 
 
 function giveHeart() {
-    const hearts = this;
-    const container = hearts.parentElement.parentElement;
+    const heart = this;
+    const container = heart.parentElement.parentElement;
     const id = container.getAttribute("id");
 
+
     fetch(`/heart/${id}`)
-        .then(function () {
-            hearts.innerHTML = parseInt(hearts.innerHTML) + 1;
-        })
+        .then(function (response) {
+            return response.json();
+        }).then(function (resp) {
+            toggleHeart(heart, resp);
+    })
 }
 
+function toggleHeart(heart, resp) {
+    if (resp) {
+        heart.style.color = "red";
+        heart.innerHTML = parseInt(heart.innerHTML) + 1;
+    }
+    else {
+        heart.style.color = "black";
+        heart.innerHTML = parseInt(heart.innerHTML) - 1;
+    }
+}
 
 heartButtons.forEach(button => button.addEventListener("click", giveHeart));

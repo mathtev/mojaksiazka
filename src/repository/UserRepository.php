@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once 'Repository.php';
 require_once __DIR__.'/../models/User.php';
@@ -16,6 +17,8 @@ class UserRepository extends Repository
         $stmt->execute();
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $_SESSION['userId'] = $user['id'];
 
         if ($user == false) {
             return null;
